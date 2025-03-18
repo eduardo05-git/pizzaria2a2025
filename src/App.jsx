@@ -3,10 +3,10 @@ import { useState } from 'react'
 function App(){
 
 const [nome, setNome] = useState('Ronaldo');
-
- return (
-  <div>
-    <h3> Pizzaria 2A</h3>
+const Formulario = () => {
+  return (
+    <>
+    <h4> Formulario de Inscrição</h4>
     <input className="Nome"
     name="nome"
     placeholder="Digite seu nome..."
@@ -16,6 +16,19 @@ const [nome, setNome] = useState('Ronaldo');
 CLIQUE AQUI
 
            </button>
+           </>
+ )
+}
+
+
+
+ return (
+  <div>
+    <h3> Pizzaria 2A</h3>
+    <Formulario />
+    <Formulario />
+    <Formulario />
+    
     </div>
  )
 }
