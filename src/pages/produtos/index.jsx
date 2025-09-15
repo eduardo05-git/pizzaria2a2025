@@ -1,4 +1,27 @@
+import axios from "axios";
+import {useState, useEffect} from 'react'
+
 const Produtos = () => {
+
+    const [dados, setDados] = useState([]);
+
+    const pegarPizzas = () => {
+
+        await axios.get("http://172.19.0.49/pizzariaoficial/api/v1/produto"
+            {withCredentials: true}
+        )
+        .then((response) => setDados(JSON.stringify(response.data)))
+        .catch((error) => console.log(error))
+
+    }
+
+    useEffect(()=>{
+    pegarPizzas();
+    }, [])
+
+    useEffect(()=>{
+        console.log(dados)
+    }, [dados])
 
     // Objeto de produtos da lista
     const pizzas = [
